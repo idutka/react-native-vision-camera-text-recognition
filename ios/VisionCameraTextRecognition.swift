@@ -143,12 +143,10 @@ public class VisionCameraTextRecognition: FrameProcessorPlugin {
     }
 
     private func getOrientation(orientation: UIImage.Orientation) -> UIImage.Orientation {
-        switch orientation.rawValue {
-        case 0: return .right
-        case 1: return .left
-        case 2: return .down
-        case 3: return .up
-        default: return .up
+        switch orientation {
+            case .right: return .left
+            case .left: return .right
+            default: return orientation
         }
     }
 }
